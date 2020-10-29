@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 11:46:00 by dmangola          #+#    #+#             */
-/*   Updated: 2020/10/28 15:43:30 by dmangola         ###   ########.fr       */
+/*   Created: 2020/10/29 19:33:01 by dmangola          #+#    #+#             */
+/*   Updated: 2020/10/29 19:41:07 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int		ft_strlen(char c[])
+void	ft_sort_int_tab(int *tab, int size)
 {
-	int i;
+	int i0;
+	int i1;
+	int a;
 
-	i = 0;
-	while (c[i])
-		i++;
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	write(1, str, ft_strlen(str));
+	i0 = 0;
+	while (i0 < size)
+	{
+		i1 = i0 + 1;
+		while (i1 < size)
+		{
+			if (tab[i0] > tab[i1])
+			{
+				a = tab[i0];
+				tab[i0] = tab[i1];
+				tab[i1] = a;
+			}
+			i1++;
+		}
+		i0++;
+	}
 }

@@ -6,27 +6,22 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:57:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/10/28 16:29:39 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/10/29 12:41:15 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_rev_int_tab(int *tab, int size)
 {
-	int cont;
-	int revcont;
-	int support;
+	int i;
+	int temp;
 
-	cont = 0;
-	revcont = size - 1;
-	while (cont <(size/2))
+	i = 0;
+	while (i < size)
 	{
-		support = tab[cont];
-		tab[cont] = tab[revcont];
-		tab[revcont] = tab[cont];
-		
-		cont++;
-		revcont--;
+		temp = tab[i];
+		tab[i++] = tab[size];
+		tab[size] = temp;
+
+		size--;
 	}
 }
