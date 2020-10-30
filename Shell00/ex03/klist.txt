@@ -1,0 +1,6 @@
+Credentials cache: API:1AB53406-86FD-4DE8-85A6-D2450CC12DFE
+        Principal: dmangola@42ROMA.IT
+
+  Issued                Expires               Principal
+Oct 26 09:52:37 2020  Oct 26 19:52:37 2020  krbtgt/42ROMA.IT@42ROMA.IT
+Oct 26 09:52:39 2020  Oct 26 19:52:37 2020  HTTP/storage.42roma.it@42ROMA.IT
