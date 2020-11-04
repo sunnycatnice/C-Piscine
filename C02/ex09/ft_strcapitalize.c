@@ -1,23 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 15:45:22 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 15:19:56 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/02 15:51:45 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/04 18:54:37 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] >= 97 && str[i] <= 122)
+	if (str[i] >= 'a' && str[i] <= 'z')
+	{
+		str[i] = str[i] - 32;
 		i++;
-	if (str[i] == '\0')
-		return (1);
-	return (0);
+	}
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			if (str[i - 1] == ' ' || !(str[i] >= 'a' && str[i] <= 'z'))
+			{
+				str[i] = str[i] - 32;
+			}
+		}
+		i++;
+	}
+	return (str);
 }

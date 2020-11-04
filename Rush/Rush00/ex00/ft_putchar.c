@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fbasso <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 15:45:22 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 15:19:56 by dmangola         ###   ########.fr       */
+/*   Created: 2020/10/24 13:00:18 by fbasso            #+#    #+#             */
+/*   Updated: 2020/10/24 16:38:22 by fbasso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
-{
-	int i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i] >= 97 && str[i] <= 122)
-		i++;
-	if (str[i] == '\0')
-		return (1);
-	return (0);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

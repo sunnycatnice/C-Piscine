@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 15:45:22 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 15:19:56 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/04 17:48:36 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/04 17:49:54 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+int		ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] >= 97 && str[i] <= 122)
+	while (str[i])
 		i++;
-	if (str[i] == '\0')
-		return (1);
-	return (0);
+	return (i);
 }

@@ -6,11 +6,11 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 15:53:47 by dmangola          #+#    #+#             */
-/*   Updated: 2020/10/30 15:56:20 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/04 15:20:30 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
 

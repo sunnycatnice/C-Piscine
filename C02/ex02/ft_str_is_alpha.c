@@ -6,7 +6,7 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 13:30:35 by dmangola          #+#    #+#             */
-/*   Updated: 2020/10/30 15:14:43 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/04 15:16:34 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	ft_str_is_alpha(char *str)
 	int i;
 
 	i = 0;
-	while ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 112))
+	while ((str[i] >= 65 && str[i] <= 90) || (str[i] >= 97 && str[i] <= 122))
 		i++;
 	if (str[i] == '\0')
 		return (1);

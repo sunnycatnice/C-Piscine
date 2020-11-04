@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 15:45:22 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 15:19:56 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/04 10:53:19 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/04 16:54:08 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int i;
+	int 			i;
+	unsigned int	j;
 
 	i = 0;
-	while (str[i] >= 97 && str[i] <= 122)
+	while (dest[i] != '\0')
 		i++;
-	if (str[i] == '\0')
-		return (1);
-	return (0);
+	j = 0;
+	while (src[i] != '\0' && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		++j;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 15:45:22 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 15:19:56 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/02 15:34:15 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/02 18:00:37 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+#include <unistd.h>
+
+char	*ft_strlowcase(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] >= 97 && str[i] <= 122)
+	while (str[i])
+	{
+		while (str[i] >= 65 && str[i] <= 90)
+		{
+			str[i] = str[i] + 32;
+			i++;
+		}
 		i++;
-	if (str[i] == '\0')
-		return (1);
-	return (0);
+	}
+	return (str);
 }

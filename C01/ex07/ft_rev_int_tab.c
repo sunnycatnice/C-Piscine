@@ -6,7 +6,7 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:57:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/10/29 12:41:15 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/02 10:28:04 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_rev_int_tab(int *tab, int size)
 		temp = tab[i];
 		tab[i++] = tab[size];
 		tab[size] = temp;
-
 		size--;
 	}
 }

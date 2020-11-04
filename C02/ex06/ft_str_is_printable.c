@@ -6,16 +6,16 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 16:08:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/10/30 16:10:17 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/04 15:21:00 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_numeric(char *str)
+int		ft_str_is_printable(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i] >= 0 && str[i] <= 127)
+	while (str[i] >= 32 && str[i] <= 127)
 		i++;
 	if (str[i] == '\0')
 		return (1);

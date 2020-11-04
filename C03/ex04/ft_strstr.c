@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/30 15:45:22 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 15:19:56 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/04 12:18:19 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/04 13:27:44 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int i;
+	int	i;
+	int	x;
+	int	find_size;
 
 	i = 0;
-	while (str[i] >= 97 && str[i] <= 122)
+	x = 0;
+	find_size = 0;
+	while (to_find[find_size] != '\0')
+		find_size++;
+	if (find_size == 0)
+		return (str);
+	while (str[x] != '\0' && to_find[x] <= find_size)
+	{
+		while (to_find[x] == str[i + x])
+		{
+			if (x == find_size - 1)
+				return (str + i);
+			x++;
+		}
+		x = 0;
 		i++;
-	if (str[i] == '\0')
-		return (1);
+	}
 	return (0);
 }
