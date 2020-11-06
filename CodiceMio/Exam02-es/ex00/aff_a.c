@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 19:01:48 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 16:53:01 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/06 13:44:26 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/06 14:45:30 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int c;
+#include <unistd.h>
 
-	c = 0;
-	while (*s1 && *s2 && c < n)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		main(int argc, char **argv)
+{
+	int i;
+
+	i = 0;
+	if (argc !=  2)
+		ft_putchar('a');
+	else
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-		c++;
+		while (*argv[1] != '\0' && *argv[1] !=  'a')
+			argv[1]++;
+		if (*argv[1] != '\0')
+			ft_putchar('a');
 	}
-	if (c == n)
-	{
-		s1--;
-		s2--;
-	}
-	return (*s1 - *s2);
+	ft_putchar('\n');
+	return (0);
 }

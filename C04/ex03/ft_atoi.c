@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 19:01:48 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 16:53:01 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/05 15:02:42 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/05 19:41:04 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_atoi(char *str)
 {
-	unsigned int c;
+	int i;
+	int segno;
+	int res;
 
-	c = 0;
-	while (*s1 && *s2 && c < n)
+	i = 0;
+	segno = 1;
+	res = 0;
+	while (str[i] >= 0 && str[i] <= 32)
+		i++;
+	while (str[i] == 43 || str[i] == 45)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-		c++;
+		if (str[i] == 45)
+			segno = segno * (-1);
+		i++;
 	}
-	if (c == n)
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		s1--;
-		s2--;
+		res = res * 10;
+		res = res + (str[i] - '0');
+		i++;
 	}
-	return (*s1 - *s2);
+	return (res * segno);
 }

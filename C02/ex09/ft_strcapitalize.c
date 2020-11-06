@@ -6,30 +6,37 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 15:51:45 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 18:54:37 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/05 11:25:17 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdio.h>
+
 char	*ft_strcapitalize(char *str)
 {
-	int i;
+	int	fc;
+	int	lc;
 
-	i = 0;
-	if (str[i] >= 'a' && str[i] <= 'z')
+	fc = 0;
+	while (str[fc] != '\0')
 	{
-		str[i] = str[i] - 32;
-		i++;
-	}
-	while (str[i])
-	{
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if ((str[fc] > 96 && str[fc] < 123)
+			|| (str[fc] > 64 && str[fc] < 91) || (str[fc] > 47 && str[fc] < 58))
 		{
-			if (str[i - 1] == ' ' || !(str[i] >= 'a' && str[i] <= 'z'))
+			lc = fc;
+			while ((str[lc] > 96 && str[lc] < 123) || (str[lc] > 64
+						&& str[lc] < 91) || (str[lc] > 47 && str[lc] < 58))
 			{
-				str[i] = str[i] - 32;
+				lc++;
+				if (str[lc] > 64 && str[lc] < 91)
+					str[lc] += 32;
 			}
+			if (str[fc] > 96 && str[fc] < 123)
+				str[fc] -= 32;
+			fc = lc - 1;
 		}
-		i++;
+		fc++;
 	}
 	return (str);
 }

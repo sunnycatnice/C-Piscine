@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_countdown.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 19:01:48 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 16:53:01 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/06 14:33:14 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/06 14:47:06 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	unsigned int c;
+#include <unistd.h>
 
-	c = 0;
-	while (*s1 && *s2 && c < n)
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putdigit(int c)
+{
+	c += 48;
+	write(1, &c, 1);
+}
+
+int main()
+{
+	int i;
+
+	i = 9;
+	while(i >= 0)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-		c++;
+		ft_putdigit(i);
+		i--;
 	}
-	if (c == n)
-	{
-		s1--;
-		s2--;
-	}
-	return (*s1 - *s2);
+	ft_putchar('\n');
 }
