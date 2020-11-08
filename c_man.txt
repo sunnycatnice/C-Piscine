@@ -1,0 +1,85 @@
+ Base file C
+Creare il file con touch
+vim nomefile.c —> edit
+norminette -R CheckForbiddenSourceHeader ft_putchar.c (o niente se c’è solo un file)
+gcc -Wall -Werror -Wextra -c -g */*
+
+<unistd.h>
+write(x, &variabile, y);
+—>	x = 0 scrivi in memoria
+	x = 1 scrivi a schermo
+	x = 2 display error
+—>	variabile (deve essere char e procedura da & per indicare indirizzo in memoria)
+—>	y = strlen (lunghezza carattere/stringa (array di caratteri))
+es per stampare numero in write (se singolo, se no usare ft_putnbr)
+
+
+Array
+char str [] = “marionetta”; —> crea un array di lunghezza 10 con ultima cifra ‘\0’
+int num[] = {2, 7}; —> crea un array di interi di lunghezza 3 con ultima cifra ‘\0’
+
+
+PUNTATORI
+int *p; // inizializzo un puntatore *p di tipo intero (di 4 byte)
+int a = 10;
+p = &a; //salvo in p l’indirizzo di a
+
+print p —> 0xahewhsjh (indirizzo di a)
+print *p —> 10 (valore di a)
+
+
+
+ITERAZIONI (cicli e ricorsione)
+while (condizione) —> Finchè è vera itera altrimenti esci
+
+RICORSIONE
+void ft<-putnbr(int n)
+{
+	If (n>=10)
+	{
+		ft_putnbr(n/10);
+		ft_putnbr(n % 10)
+	}
+	Else
+	{
+		write(1, n +  ‘0’, 1); // oppure n + 48 (= 0 in ascii)
+	}
+}
+
+Vim —> text editor in terminale
+:wq! Salva ed esci
+:x! Stessa cosa
+SCORCIATOIA —> shift + zz (salva ed esci)
+:q! Esci
+:Shift + I (maiuscola) = edit
+:v copia il codice selezionato da mouse
+:y incolla codice dove posizionato
+:Stdheader crea header file
+
+Set num by default —> vi ~/.vimrc poi INSERT e scrivere set number
+
+Touch —>
+Touch serve per creare un nuovo file
+Man touch serve per vedette tutti i comandi disponibili
+
+-t modifica la data 2020/06/01/23:44 nome file
+Esempio:
+touch -t 202006012344 test4
+
+MAN —> abbreviazione per manuale (di qualsiasi prog.)
+Per uscire premere q
+
+
+Open function
+int open(char *path, int flags[, mode_t perm);
+return file descriptor (int) o -1 in caso di errore.
+Ci sono 3 flags —> Read only, write only and RDWR
+
+Close function
+Int close(int fd)
+
+Write function
+Int write(int fd, char *buf, int count);
+fd = file descriptor dove scriveremo
+
+
