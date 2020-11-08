@@ -12,27 +12,23 @@
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int	i;
-	int	x;
-	int	find_size;
+	char	*i1;
+	char	*i2;
 
-	i = 0;
-	x = 0;
-	find_size = 0;
-	while (to_find[find_size] != '\0')
-		find_size++;
-	if (find_size == 0)
+	if (!*to_find)
 		return (str);
-	while (str[x] != '\0' && to_find[x] <= find_size)
+	while (*str)
 	{
-		while (to_find[x] == str[i + x])
+		i1 = str;
+		i2 = to_find;
+		while (*i2 && *i1 == *i2)
 		{
-			if (x == find_size - 1)
-				return (str + i);
-			x++;
+			i1++;
+			i2++;
 		}
-		x = 0;
-		i++;
+		if (*i2 == 0)
+			return (str);
+		++str;
 	}
 	return (0);
 }

@@ -6,33 +6,33 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 18:15:28 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/05 12:26:54 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/07 16:38:54 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+unsigned int	n_p(int n)
+{
+	if (n < 0)
+	{
+		n = (unsigned int)(n * -1);
+		write(1, "-", 1);
+	}
+	return (n);
+}
+
+void			ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nb)
+void			ft_putnbr(int nb)
 {
-	if (nb == -2147483648)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar('8');
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-');
-		ft_putchar(-nb);
-	}
-	else
-	{
-		if (nb > 9)
-			ft_putnbr(nb / 10);
-		ft_putchar('0' + nb % 10);
-	}
+	unsigned int num;
+
+	num = n_p(nb);
+	if (num > 9)
+		ft_putnbr(num / 10);
+	ft_putchar('0' + num % 10);
 }

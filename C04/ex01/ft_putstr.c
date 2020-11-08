@@ -6,11 +6,13 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 17:52:30 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/04 18:14:10 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/07 16:54:55 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_putchar(char *c)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
@@ -18,9 +20,9 @@ char	ft_putchar(char *c)
 void	ft_putstr(char *str)
 {
 	int i;
-	
+
 	i = 0;
-	while (str[i++])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
