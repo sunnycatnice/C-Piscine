@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 10:34:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/09 17:21:46 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/08 14:56:49 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/09 18:38:56 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		ft_fibonacci(int index)
 {
-	write (1, &c, 1);
-}
-
-void 	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-int		 main(int ac, char **av)
-{
-	if (ac == 1)
-		ft_putstr(av[0]);
-	return (0);
+	if (index < 0)
+		return (-1);
+	if (index == 0)
+		return (0);
+	if (index == 1)
+		return (1);
+	if (index == 2)
+		return (2);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

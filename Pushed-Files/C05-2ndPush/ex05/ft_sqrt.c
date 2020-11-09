@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 10:34:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/09 17:21:46 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/08 15:17:35 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/09 19:23:00 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		ft_sqrt(int nb)
 {
-	write (1, &c, 1);
-}
+	int sq;
 
-void 	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-int		 main(int ac, char **av)
-{
-	if (ac == 1)
-		ft_putstr(av[0]);
+	sq = 0;
+	if (nb < 0)
+		return (0);
+	while (!(sq * sq == nb))
+		sq++;
+	if (sq * sq == nb)
+		return (sq);
 	return (0);
 }

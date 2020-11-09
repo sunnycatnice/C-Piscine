@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 10:34:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/09 17:21:46 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/08 14:20:48 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/08 14:48:29 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		ft_recursive_power(int nb, int power)
 {
-	write (1, &c, 1);
-}
-
-void 	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-int		 main(int ac, char **av)
-{
-	if (ac == 1)
-		ft_putstr(av[0]);
-	return (0);
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	return (nb * ft_recursive_power(nb, power - 1));
 }
