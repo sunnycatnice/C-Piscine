@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:17:35 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/08 17:59:25 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/09 10:34:21 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/09 10:46:19 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
+int main(int argc, char **argv)
 {
-	int sq;
-
-	sq = 1;
-	if (nb < 0)
-		return (0);
-	while (sq * sq < nb)
-		sq++;
-	if (sq * sq == nb)
-		return (sq);
-	return (0);
+	
 }

@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/08 15:17:35 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/08 17:59:25 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/09 10:24:18 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/09 10:29:54 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
+int		ft_is_prime(int nb)
 {
-	int sq;
+	int i;
 
-	sq = 1;
-	if (nb < 0)
-		return (0);
-	while (sq * sq < nb)
-		sq++;
-	if (sq * sq == nb)
-		return (sq);
+	if (nb <= 2)
+		return (1);
+	i = 2;
+	while (!(nb % i == 0))
+		i++;
+	if (i == nb)
+		return (1);
+	return (0);
+}
+
+int		ft_find_next_prime(int nb)
+{
+	while (1)
+	{
+		if (ft_is_prime(nb))
+			return (nb);
+		nb++;
+	}
 	return (0);
 }
