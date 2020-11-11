@@ -6,7 +6,7 @@
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 10:34:21 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/09 17:21:46 by dmangola         ###   ########.fr       */
+/*   Updated: 2020/11/11 18:13:53 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putchar(char c)
 {
-	write (1, &c, 1);
+	write(1, &c, 1);
 }
 
-void 	ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 
@@ -29,9 +29,9 @@ void 	ft_putstr(char *str)
 	}
 }
 
-int		 main(int ac, char **av)
+int		main(int argc, char **argv)
 {
-	if (ac == 1)
-		ft_putstr(av[0]);
+	if (argc < 0)
+		ft_putstr(argv[0]);
 	return (0);
 }

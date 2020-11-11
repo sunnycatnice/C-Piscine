@@ -1,44 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   readfile.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 11:00:27 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/11 16:47:23 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/10 17:05:21 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/10 17:34:49 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int main ()
 {
-	write(1, &c, 1);
-}
-
-void	ft_print(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-	ft_putchar('\n');
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-
-	i = 1;
-	while (i < argc)
-	{
-		ft_print(argv[i]);
-		i++;
-	}
+	int fd;
+	ft = open("tabella", O_WRONLY | O_CREAT , S_IRUSR | S_IWUSR);
+	ft_putnbr(fd);
 	return (0);
 }

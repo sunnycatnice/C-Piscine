@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 11:00:27 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/11 16:47:23 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/11 14:17:51 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/11 14:27:00 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putchar(char c)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print(char *str)
-{
+	int diff;
 	int i;
 
+	diff = max - min;
 	i = 0;
-	while (str[i])
+	if (!(min < max))
 	{
-		ft_putchar(str[i]);
+		*range = 0;
+		return (0);
+	}
+	if (!(*range = malloc(diff * sizeof(int))))
+		return (0);
+	if (!*range)
+		return (-1);
+	while (min < max)
+	{
+		*(*range + i) = min;
+		min++;
 		i++;
 	}
-	ft_putchar('\n');
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-
-	i = 1;
-	while (i < argc)
-	{
-		ft_print(argv[i]);
-		i++;
-	}
-	return (0);
+	return (diff);
 }

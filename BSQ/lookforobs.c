@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   lookforobs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 11:00:27 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/11 16:47:23 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/10 16:22:49 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/10 16:26:25 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		lookforobs(int board[lr][lc], int *r, int *c) //limit row, limit colomn (lr,lc)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
+	*r = 0;
+	*c = 0;
+	while (*r < 4)
 	{
-		ft_putchar(str[i]);
-		i++;
-	}
-	ft_putchar('\n');
-}
-
-int		main(int argc, char **argv)
-{
-	int i;
-
-	i = 1;
-	while (i < argc)
-	{
-		ft_print(argv[i]);
-		i++;
+		*c = 0;
+		while (*c < 4)
+		{
+			if (board[*r][*c] == 0) //sostituire 0 con obstacle
+				return (1); //returna 1 come funzione di controllo "lookfor..."
+			*c += 1;
+		}
+		*r += 1;
 	}
 	return (0);
 }

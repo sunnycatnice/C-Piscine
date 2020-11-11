@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmangola <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/11 11:00:27 by dmangola          #+#    #+#             */
-/*   Updated: 2020/11/11 16:47:23 by dmangola         ###   ########.fr       */
+/*   Created: 2020/11/11 11:55:54 by dmangola          #+#    #+#             */
+/*   Updated: 2020/11/11 12:11:23 by dmangola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,25 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_print(char *str)
+void	ft_putstr(char *str)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		ft_putchar(str[i]);
-		i++;
+		ft_putchar(*str);
+		str++;
 	}
-	ft_putchar('\n');
 }
 
-int		main(int argc, char **argv)
+int		main(int ac, char **av)
 {
 	int i;
 
-	i = 1;
-	while (i < argc)
+	i = ac - 1;
+	while (i > 0)
 	{
-		ft_print(argv[i]);
-		i++;
+		ft_putstr(av[i]);
+		ft_putchar('\n');
+		i--;
 	}
 	return (0);
 }
